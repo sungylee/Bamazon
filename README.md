@@ -41,6 +41,5 @@ This means updating the SQL database to reflect the remaining quantity.
 Once the update goes through, show the customer the total cost of their purchase.
 
 
-
-![bamazon_output](https://user-images.githubusercontent.com/40503899/46266210-7eeb8600-c4fb-11e8-8624-e115f6d54978.jpg)
-
+![bamazon_output1](https://user-images.githubusercontent.com/40503899/46318579-0214e680-c5a5-11e8-8674-b936ca8a6a27.jpg)
+![bamazon_output2](https://user-images.githubusercontent.com/40503899/46318580-0214e680-c5a5-11e8-9de6-ee6c2edc9470.jpg)
