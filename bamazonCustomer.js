@@ -153,7 +153,7 @@ inquirer
 
   } 
   else {
-    // console.log("Thank you have a nice day!");
+   
     connection.end();
  
   }
