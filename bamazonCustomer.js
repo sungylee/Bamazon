@@ -1,8 +1,8 @@
+//Assignment Bamazon Shopping
+
 var mysql = require("mysql");
 var inquirer = require("inquirer");
-//var Table = require("cli-table");
-
-const divider = "\n******************************************************\n";
+var Table = require("cli-table");
 
 var connection = mysql.createConnection({
   host: "localhost",
@@ -25,24 +25,25 @@ connection.connect(function(err) {
 //function to display inventory
 function displayStock() { //example from playlistRead.js activity
 
-  var formattedDataArray = [];
+   var table = new Table({
+    head: ['Item', 'Product', 'Dept', 'Price', 'Quantity']
+  , colWidths: [10, 40, 10, 10, 20]
+});
+
 
   connection.query("SELECT * FROM products", function(err, res) {
-    console.log("*Item ID*****Product********Dept*****Price***Stock Quantity**");
     for (var i = 0; i < res.length; i++) {
-      //console.log(res[i].item_id + " | " + res[i].product_name + " | " + res[i].department_name + " | " + res[i].price);
-         formattedData = [res[i].item_id + " | " + res[i].product_name + " | " + res[i].department_name + " | " + res[i].price + " | " + res[i].stock_quantity].join("\n\n");
-        formattedDataArray.push(formattedData); 
+        //display inventory
+        formattedData = [res[i].item_id,res[i].product_name,res[i].department_name,"$"+res[i].price.toFixed(2),res[i].stock_quantity];
+        //cli-table to display nicer table, worked with tutor Edna for formatting
+        table.push(formattedData);
     }
-    
-    console.log(formattedDataArray.join("\n") + divider);
-    console.log("-----------------------------------------------");
-    
+    console.log(table.toString());
+
   });
   
   //run function order with time out delay to allow display of stock
   setTimeout(order, 1500);
-
 }
 
 //function to order: ask two questions item and how many to order
@@ -128,15 +129,15 @@ function displayOrderTotal(orderItem, orderQuantity) {
 
   function(error, res) {
   if (error) throw err;
-  var orderTotal;
 
-  orderTotal = orderQuantity * res[0].price;
-  console.log("Total Order purchase is $" + orderTotal);
+
+  var orderTotal = orderQuantity * res[0].price;
+  
+  console.log("Total Order purchase is $" + orderTotal.toFixed(2));
   purchaseAgain();
       
   });
 };
-
 
 function purchaseAgain() { 
 inquirer
@@ -152,7 +153,7 @@ inquirer
 
   } 
   else {
-    console.log("Thank you have a nice day!");
+    // console.log("Thank you have a nice day!");
     connection.end();
  
   }
