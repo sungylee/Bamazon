@@ -42,4 +42,5 @@ Once the update goes through, show the customer the total cost of their purchase
 
 
 
-https://github.com/sungylee/Bamazon/blob/master/Bamazon_output.JPG
+![bamazon_output](https://user-images.githubusercontent.com/40503899/46266210-7eeb8600-c4fb-11e8-8624-e115f6d54978.jpg)
+
