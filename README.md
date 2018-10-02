@@ -11,9 +11,13 @@ The app will take in orders from customers and deplete stock from the store's in
 
 Instructions
 -Clone repo
+
 -In MySQL workbench load bamazon.sql and run
+
 -Run in terminal  npm i
+
 -node bamazonCustomer.js
+
 
 Challenge #1: Customer View (Minimum Requirement)
 Create a MySQL Database called bamazon.
