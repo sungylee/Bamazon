@@ -1,19 +1,21 @@
 # bamazon
 
 
-Overview
+#Overview
 
 An Amazon-like storefront with the MySQL and Node.js.
 The app will take in orders from customers and deplete stock from the store's inventory. 
 
 
-
-Customer View
+#Customer View
 
 Instructions
+-Clone repo
+-In MySQL workbench load bamazon.sql and run
+-Run in terminal  npm i
+-node bamazonCustomer.js
 
 Challenge #1: Customer View (Minimum Requirement)
-
 Create a MySQL Database called bamazon.
 Then create a Table inside of that database called products.
 The products table should have each of the following columns:
@@ -40,6 +42,6 @@ However, if your store does have enough of the product, you should fulfill the c
 This means updating the SQL database to reflect the remaining quantity.
 Once the update goes through, show the customer the total cost of their purchase.
 
-
+#Demo
 ![bamazon_output1](https://user-images.githubusercontent.com/40503899/46318579-0214e680-c5a5-11e8-8674-b936ca8a6a27.jpg)
 ![bamazon_output2](https://user-images.githubusercontent.com/40503899/46318580-0214e680-c5a5-11e8-9de6-ee6c2edc9470.jpg)
